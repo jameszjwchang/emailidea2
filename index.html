@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robot Secretary — MVP Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Robot Secretary</h1>
+        <p class="subtitle">Fake MVP demo — extension layer over any email account</p>
+      </div>
+      <button id="upgradeBtn" class="btn ghost">Subscription: Pro Monthly</button>
+    </header>
+
+    <main class="layout">
+      <section class="panel chat-panel">
+        <h2>Task Chat</h2>
+        <div id="chatLog" class="chat-log" aria-live="polite"></div>
+
+        <form id="chatForm" class="chat-form">
+          <label for="taskInput" class="sr-only">Type a task</label>
+          <textarea
+            id="taskInput"
+            rows="4"
+            placeholder="Example: Send onboarding email to 3 clients and mark finance emails as high priority."
+          ></textarea>
+          <div class="chat-actions">
+            <button type="button" id="exampleTaskBtn" class="btn ghost">Insert Example Task</button>
+            <button type="submit" class="btn primary">Run Task</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel inbox-panel">
+        <div class="panel-header">
+          <h2>Inbox Preview</h2>
+          <div class="filters">
+            <button class="btn small active" data-filter="all">All</button>
+            <button class="btn small" data-filter="high">High Priority</button>
+            <button class="btn small" data-filter="spam">Spam</button>
+          </div>
+        </div>
+
+        <ul id="emailList" class="email-list"></ul>
+      </section>
+
+      <section class="panel composer-panel">
+        <h2>Draft / Auto-Reply Preview</h2>
+        <div class="composer-card">
+          <p><strong>To:</strong> <span id="draftTo">—</span></p>
+          <p><strong>Subject:</strong> <span id="draftSubject">—</span></p>
+          <p><strong>Type:</strong> <span id="draftType">—</span></p>
+          <div>
+            <strong>Body:</strong>
+            <pre id="draftBody">No draft yet. Run a chat task to generate one.</pre>
+          </div>
+          <div class="composer-actions">
+            <button id="simulateSendBtn" class="btn primary" disabled>Simulate Send</button>
+            <button id="clearDraftBtn" class="btn ghost" disabled>Clear Draft</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Demo only. No real inbox access. Actions are simulated for customer walkthroughs.
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
